@@ -15,7 +15,9 @@ az webapp up --location eastasia --name firstwebapp - -html
 •	Clean up resources
 •	az group delete – name group_name
 
+
 Create a PHP web app in Azure App Service
+
 •	Open Command Prompt (CMD) or PowerShell on your computer.
 cd C:\xampp\htdocs
 git clone https://github.com/Azure-Samples/php-docs-hello-world
