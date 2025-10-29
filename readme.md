@@ -1,7 +1,39 @@
-# Vanilla JavaScript App
+Create a static HTML web app in Azure
 
-[Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview) allows you to easily build JavaScript apps in minutes. Use this repo with the [quickstart](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=vanilla-javascript) to build and customize a new static site.
+mkdir ICTbatch3 
+cd $HOME/ICTbatch3
+git clone https://github.com/Azure-Samples/html-docs-hello-world.git
+cd html-docs-hello-world
+•	az account list-locations –o table
+az webapp up --location eastasia --name firstwebapp - -html
+•	az provider register --namespace Microsoft.Web
+•	az webapp up --location eastasia --name firstwebapp - -html
+•	go to the app URL:http://.azurewebsites.net
+•	nano index.html
+•	Ctrl+O to save then Enter and Ctrl+X to exi
+•	az webapp up --location eastasia --name firstwebapp - -html
+•	Clean up resources
+•	az group delete – name group_name
 
-This repo is used as a starter for a _very basic_ HTML web application using no front-end frameworks.
+Create a PHP web app in Azure App Service
+•	Open Command Prompt (CMD) or PowerShell on your computer.
+cd C:\xampp\htdocs
+git clone https://github.com/Azure-Samples/php-docs-hello-world
+cd php-docs-hello-world
+Start Apache in XAMPP (via XAMPP Control Panel).
+navigate to the sample app at http://localhost/php-docs-hello-world
+•	in cloud shell
+az webapp deployment user set --user-name  arena3000 --password arena@123
+az group create --name myResourceGroup --location eastasia
+az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --is-linux
 
-This repo has a dev container. This means if you open it inside a [GitHub Codespace](https://github.com/features/codespaces), or using [VS Code with the remote containers extension](https://code.visualstudio.com/docs/remote/containers), it will be opened inside a container with all the dependencies already installed.
+az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name arenawebapp --runtime "PHP|8.2" --deployment-local-git
+•	The URL of the Git remote is shown in the deploymentLocalGitUrl property
+•	http:// arenawebapp.azurewebsites.net
+•	in the local terminal window
+git remote add azure deploymentLocalGitUrl
+git push azure master
+•	open the index.php file within the PHP app, and make a small change
+•	In the local terminal window,
+git commit -am "updated output" 
+git push azure master
