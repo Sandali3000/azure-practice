@@ -33,9 +33,16 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 •	The URL of the Git remote is shown in the deploymentLocalGitUrl property
 •	http:// arenawebapp.azurewebsites.net
 •	in the local terminal window
+
+git commit -a -m "My first commit"
+git checkout -b my-feature 
+git push -u origin my-feature 
 git remote add azure deploymentLocalGitUrl
 git push azure master
 •	open the index.php file within the PHP app, and make a small change
 •	In the local terminal window,
 git commit -am "updated output" 
 git push azure master
+
+git config --global user.name "Your Name" 
+git config --global user.email "your_email@example.com" 
